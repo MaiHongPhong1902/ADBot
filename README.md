@@ -1,106 +1,106 @@
-# ADBot - Công cụ phân tích nội dung tự động
+# ADBot - Automated Content Analysis Tool
 
-ADBot là một công cụ tự động phân tích nội dung từ các bài viết trên các trang báo điện tử, sử dụng AI để tóm tắt và phân tích nội dung.
+ADBot is an automated tool for analyzing content from online news articles using AI to summarize and analyze content.
 
-## Tính năng
+## Features
 
-- Tự động trích xuất nội dung từ các bài viết báo điện tử
-- Phân tích nội dung sử dụng AI (DeepSeek hoặc GPT-3.5)
-- Tự động cập nhật kết quả vào Google Sheets
-- Hỗ trợ nhiều định dạng URL khác nhau
-- Tự động backup dữ liệu
+- Automatic content extraction from news articles
+- Content analysis using AI (DeepSeek or GPT-3.5)
+- Automatic updates to Google Sheets
+- Support for multiple URL formats
+- Automatic data backup
 
-## Yêu cầu
+## Requirements
 
-- Python 3.8 trở lên
-- Tài khoản OpenRouter (cho DeepSeek) hoặc OpenAI (cho GPT-3.5)
-- Tài khoản Google Cloud với Google Sheets API được bật
-- Các thư viện Python cần thiết (xem requirements.txt)
+- Python 3.8 or higher
+- OpenRouter account (for DeepSeek) or OpenAI account (for GPT-3.5)
+- Google Cloud account with Google Sheets API enabled
+- Required Python libraries (see requirements.txt)
 
-## Cài đặt
+## Installation
 
 1. Clone repository:
 ```bash
-git clone https://github.com/MaiHongPhong1902/adbot.git
-cd adbot
+git clone https://github.com/MaiHongPhong1902/ADBot.git
+cd ADBot
 ```
 
-2. Tạo môi trường ảo và kích hoạt:
+2. Create and activate virtual environment:
 ```bash
 conda create -n Bot python=3.8
 conda activate Bot
 ```
 
-3. Cài đặt các thư viện cần thiết:
+3. Install required libraries:
 ```bash
 pip install -r requirements.txt
 ```
 
-4. Cấu hình các file nhạy cảm:
-   - Copy file `.env.example` thành `.env` và điền các API key của bạn
-   - Tạo file `credentials.json` từ Google Cloud Console và đặt vào thư mục gốc
-   - KHÔNG commit các file này lên git
+4. Configure sensitive files:
+   - Copy `.env.example` to `.env` and fill in your API keys
+   - Create `credentials.json` from Google Cloud Console and place it in the root directory
+   - DO NOT commit these files to git
 
-5. Tạo Service Account và tải credentials:
-- Truy cập Google Cloud Console
-- Tạo project mới hoặc chọn project có sẵn
-- Bật Google Sheets API
-- Tạo Service Account và tải file credentials.json
-- Đặt file credentials.json vào thư mục gốc của project
+5. Set up Google Cloud:
+- Visit Google Cloud Console
+- Create a new project or select existing one
+- Enable Google Sheets API
+- Create Service Account and download credentials.json
+- Place credentials.json in the project root directory
 
-## Lưu ý quan trọng
+## Usage
 
-- KHÔNG commit các file nhạy cảm lên git:
-  - `.env` (chứa API keys)
-  - `credentials.json` (chứa Google Cloud credentials)
-  - Các file backup
-- Các file này đã được thêm vào `.gitignore`
-- Nếu vô tình commit các file này, hãy xóa chúng khỏi git history ngay lập tức
-
-## Cách sử dụng
-
-1. Chạy chương trình:
+1. Run the program:
 ```bash
 python main.py
 ```
 
-2. Nhập URL bài viết cần phân tích khi được yêu cầu
+2. Enter the article URL when prompted
 
-3. Chọn model AI để phân tích (DeepSeek hoặc GPT-3.5)
+3. Choose AI model for analysis (DeepSeek or GPT-3.5)
 
-4. Kết quả sẽ được tự động cập nhật vào Google Sheets
+4. Results will be automatically updated to Google Sheets
 
-## Cấu trúc dữ liệu
+## Data Structure
 
-Kết quả phân tích được lưu trong Google Sheets với các cột:
-- URL: Link bài viết gốc
-- Chủ đề: Chủ đề chính của bài viết
-- Tóm tắt: Tóm tắt ngắn gọn nội dung
-- Kết luận: Kết luận chính từ bài viết
-- Timestamp: Thời gian phân tích
+Analysis results are stored in Google Sheets with columns:
+- URL: Original article link
+- Topic: Main topic of the article
+- Summary: Brief content summary
+- Conclusion: Main conclusions from the article
+- Timestamp: Analysis time
 
-## Backup dữ liệu
+## Data Backup
 
-Dữ liệu được tự động backup vào file JSON theo ngày:
+Data is automatically backed up to JSON files by date:
 - Format: backup_YYYYMMDD.json
-- Mỗi entry chứa timestamp, URL và kết quả phân tích
+- Each entry contains timestamp, URL, and analysis results
 
-## Xử lý lỗi
+## Error Handling
 
-Nếu gặp lỗi quyền truy cập Google Sheets:
-1. Mở Google Sheet tại URL được cung cấp
-2. Click nút Share
-3. Thêm email service account với quyền Editor
-4. Chạy lại chương trình
+If you encounter Google Sheets access errors:
+1. Open the Google Sheet at the provided URL
+2. Click Share button
+3. Add service account email with Editor permissions
+4. Run the program again
 
-## Đóng góp
+## Important Notes
 
-Mọi đóng góp đều được chào đón! Vui lòng:
-1. Fork repository
-2. Tạo branch mới
-3. Commit các thay đổi
-4. Push lên branch
-5. Tạo Pull Request
+- DO NOT commit sensitive files to git:
+  - `.env` (contains API keys)
+  - `credentials.json` (contains Google Cloud credentials)
+  - Backup files
+- These files are already added to `.gitignore`
+- If accidentally committed, remove them from git history immediately
+
+## Contributing
+
+Contributions are welcome! Please:
+1. Fork the repository
+2. Create a new branch
+3. Commit your changes
+4. Push to the branch
+5. Create a Pull Request
 
 ## License
 
@@ -126,10 +126,10 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
-## Tác giả
+## Author
 
 - **Mai Hong Phong**
   - Email: maihongphong.work@gmail.com
-  - SĐT: 0865243215
+  - Phone: 0865243215
   - GitHub: [@MaiHongPhong1902](https://github.com/MaiHongPhong1902)
-  - Trường: Đại học Sư phạm Kỹ thuật TP. HCM
+  - University: Ho Chi Minh City University of Technology and Education
