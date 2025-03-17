@@ -52,7 +52,7 @@ pip install -r requirements.txt
 
 1. Run the program:
 ```bash
-python main.py
+python main.py <URL>?
 ```
 
 2. Enter the article URL when prompted
